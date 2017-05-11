@@ -3,7 +3,6 @@ import peasy.*;
 float x = 0;
 float y = 0;
 float z = 0;
-float t = 0;
 
 ArrayList<PVector> points = new ArrayList<PVector>();
 
@@ -20,13 +19,13 @@ void draw()
   background(0);
 
   float dt = 0.1;
-  t += dt;
-  float dx = cos(t/2);
-  float dy = 0;
+  float dx = cos(dt);
+  float dy = sin(dt);
+  float dz = dt;
 
   x += dx;
   y += dy;
-  z += dt;
+  z += dz;
   
   points.add(new PVector(x,y,z));
   translate(0,0,-100);
@@ -34,15 +33,12 @@ void draw()
 
   stroke(255);
   noFill();
-  
   beginShape();
   for (PVector v : points)
   {
     stroke(255,255,255);
-    vertex(v.x, v.y, v.z);
+    vertex(v.x,v.y,v.z);
   }
   endShape();
-  
-  println(x,y,z);
   
 }
