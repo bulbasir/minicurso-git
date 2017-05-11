@@ -1,1 +1,2 @@
 minicurso-git
+lido
