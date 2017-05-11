@@ -1,0 +1,35 @@
+import peast.*;
+
+float x = 0;
+float y = 0;
+float z = 0;
+
+ArrayList<Vector> points = new ArrayList<Vector>;
+
+PeasyCam cam;
+
+void setup()
+{
+	size(800,600,P3D);
+	cam = new PeasyCam(this, 600);
+}
+
+void draw()
+{
+	background(0);
+
+	float dt = 0.01;
+	float dx = cos(dt);
+	float dy = sin(dt);
+	float dz = dt;
+
+	x += dx;
+	y += dy;
+	z += dz;
+
+	stroke(255);
+	noFill();
+	beginShape();
+	endShape();
+	
+}
