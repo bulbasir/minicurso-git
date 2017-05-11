@@ -1,2 +1,2 @@
 linha 1
-linha 2 para dar bug
+linha 2 bugada
