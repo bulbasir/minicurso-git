@@ -1,0 +1,44 @@
+import peasy.*;
+
+float x = 0;
+float y = 0;
+float z = 0;
+
+ArrayList<PVector> points = new ArrayList<PVector>();
+
+PeasyCam cam;
+
+void setup()
+{
+  size(800,600,P3D);
+  cam = new PeasyCam(this, 500);
+}
+
+void draw()
+{
+  background(0);
+
+  float dt = 0.1;
+  float dx = cos(dt);
+  float dy = sin(dt);
+  float dz = dt;
+
+  x += dx;
+  y += dy;
+  z += dz;
+  
+  points.add(new PVector(x,y,z));
+  translate(0,0,-100);
+  scale(5);
+
+  stroke(255);
+  noFill();
+  beginShape();
+  for (PVector v : points)
+  {
+    stroke(255,255,255);
+    vertex(v.x,v.y,v.z);
+  }
+  endShape();
+  
+}
